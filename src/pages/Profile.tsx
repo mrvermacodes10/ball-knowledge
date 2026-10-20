@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GAME_BY_ID } from "../data/games";
 import { achievements, active, addProfile, bestStreak, categoryStats, levelInfo, personalBests, removeProfile, resetProgress, setAvatar, setName, streak, switchProfile, totalXp, useStore } from "../lib/store";
 import { secs } from "../lib/format";
+import DataBackup from "../components/DataBackup";
 
 const AVATARS = ["⚽", "🧤", "🏆", "🦁", "🦅", "🐺", "🐉", "🎯", "👟", "🥅"];
 
@@ -61,6 +62,7 @@ export default function ProfilePage() {
           ) : <button className="btn ghost small danger" onClick={() => setConfirmReset(true)}>Reset my progress</button>}
           <p className="muted small">Players and progress are stored in this browser only. Clearing site data removes them.</p>
         </div>
+        <DataBackup />
       </aside>
     </div>
   );
